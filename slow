@@ -12,7 +12,7 @@ get '/' => sub {
 	});
 	for my $sleep (qw/2 1 5 1/) {
 		my $end = $delay->begin(0);
-		$self->ua->get("http://localhost:3002/$sleep" => sub {
+		$self->ua->get("http://localhost:3000/$sleep" => sub {
 			my ($ua, $tx) = @_;
 			$end->(join("-=-", $tx->res->code, $sleep));
 		});
